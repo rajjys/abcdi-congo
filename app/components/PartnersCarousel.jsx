@@ -21,7 +21,7 @@ const PartnersCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex(prev => (prev + 1) % partners.length);
-    }, 2000);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [partners.length]);
@@ -37,7 +37,7 @@ const PartnersCarousel = () => {
           className="relative h-32">
           <div
             className="flex absolute left-0 top-0 transition-transform duration-1000 ease-in-out"
-            style={{ transform: `translateX(-${activeIndex * 40}%)` }}
+            style={{ transform: `translateX(-${activeIndex * 20}%)` }}
           >
             {duplicatedPartners.map((logo, index) => (
               <div 
