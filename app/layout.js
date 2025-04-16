@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import ResponsiveHeader from "./components/ResponsiveHeader";
 import Header from "./components/Header";
 
 const geistSans = Geist({
