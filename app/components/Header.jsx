@@ -138,7 +138,7 @@ const Header = () => {
               <li>
                 <Link
                   href="/donate"
-                  className="inline-flex items-center font-medium justify-center px-6 py-2 rounded-full cursor-pointer text-sm md:text-lg text-gray-900 dark:text-white  
+                  className="inline-flex items-center font-medium justify-center px-6 py-2 rounded-full cursor-pointer text-sm md:text-lg text-gray-200  
                           dark:hover:text-white bg-green-600 hover:bg-green-800 dark:hover:bg-green-800 border border-white transition-colors" >
                   Donate
                 </Link>

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const PartnersCarousel = () => {
@@ -27,38 +28,30 @@ const PartnersCarousel = () => {
   }, [partners.length]);
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 py-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
-        <h3 className="text-green-900 dark:text-green-300 text-xl font-semibold text-center mb-8">
-          Our Trusted Partners
-        </h3>
-
-        <div 
-          className="relative h-32">
-          <div
-            className="flex absolute left-0 top-0 transition-transform duration-1000 ease-in-out"
-            style={{ transform: `translateX(-${activeIndex * 20}%)` }}
-          >
+    <div className="overflow-hidden">
+      <h2 className="text-xl sm:text-2xl md:text-4xl text-green-900 font-bold font-mono dark:text-green-300 text-start block my-2 ml-2">Nos Partenaires</h2>
+          <p className="text-gray-600 dark:text-gray-200 my-2 text-sm sm:text-base md:text-lg p-2 border-l-4 border-green-300 shadow-md bg-white/50 dark:bg-gray-900/50">
+            Nous travaillons en collaboration avec divers partenaires pour maximiser notre impact.
+          </p>
+        <div className="relative h-32">
+          <div className="flex absolute left-0 top-0 transition-transform duration-1000 ease-in-out"
+            style={{ transform: `translateX(-${activeIndex * 20}%)` }} >
             {duplicatedPartners.map((logo, index) => (
               <div 
                 key={index}
-                className="flex items-center justify-center min-w-[20%] h-32 p-4"
-              >
-                <img 
-                  src={logo} 
-                  alt="Partner logo" 
-                  className="max-h-16 w-full object-contain opacity-70 hover:opacity-100 transition-opacity"
-                />
+                className="flex items-center justify-center min-w-[20%] h-32 p-4">
+                <Image
+                  src={logo}
+                  alt={`Partner Logo ${index + 1}`}
+                  width={120}
+                  height={120}
+                  className="object-contain h-full w-full object-contain opacity-70"
+                  />
               </div>
             ))}
           </div>
-          
-          {/* Gradient fade edges */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent" />
         </div>
       </div>
-    </div>
   );
 };
 

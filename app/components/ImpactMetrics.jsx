@@ -27,9 +27,14 @@ const ImpactMetrics = () => {
   }, []);
 
   return (
-    <div 
+    <div>
+      <h2 className="text-xl sm:text-2xl md:text-4xl text-green-900 font-bold font-mono dark:text-green-300 text-start block mx-4 py-4">Notre Impact</h2>
+      <p className="text-gray-600 dark:text-gray-200 my-2 text-sm sm:text-base md:text-lg p-2 border-l-4 border-green-300 shadow-md bg-white/50 dark:bg-gray-900/50">
+            Découvrez l'impact de nos initiatives sur la communauté et l'environnement.
+      </p>
+      <div 
       ref={sectionRef}
-      className="rounded-t-lg shadow-lg md:px-24 md:p-2 grid grid-cols-2 md:grid-cols-5 gap-4 py-8"
+      className="md:px-24 md:p-2 grid grid-cols-2 md:grid-cols-5 gap-4 py-8"
     >
       {metrics.map((metric, index) => (
         <MetricItem 
@@ -41,12 +46,14 @@ const ImpactMetrics = () => {
         />
       ))}
     </div>
+    </div>
+    
   );
 };
 
 const MetricItem = ({ title, count, icon, animate }) => {
   const [displayCount, setDisplayCount] = useState(0);
-  const duration = 2000;
+  const duration = 1000;
 
   useEffect(() => {
     if (!animate) return;

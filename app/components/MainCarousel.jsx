@@ -11,31 +11,31 @@ export default function MainCarousel() {
   const slides = [
     {
       id: 1,
-      image: 'https://picsum.photos/1920/1080?random=1',
+      image: '/stock/black-woman-farm.webp',
       title: 'First Slide',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
     },
     {
       id: 2,
-      image: 'https://picsum.photos/1920/1080?random=2',
+      image: '/stock/community.jpg',
       title: 'Second Slide',
       description: 'Praesentium magnam consectetur vel in deserunt.'
     },
     {
       id: 3,
-      image: 'https://picsum.photos/1920/1080?random=3',
+      image: '/stock/computer-training.jpg',
       title: 'Third Slide',
       description: 'Aspernatur laborum voluptate consequatur iure.'
     },
     {
       id: 4,
-      image: 'https://picsum.photos/1920/1080?random=4',
+      image: '/stock/construction.jpg',
       title: 'Fourth Slide',
       description: 'Repellat animi sequi excepturi cumque.'
     },
     {
       id: 5,
-      image: 'https://picsum.photos/1920/1080?random=5',
+      image: '/stock/kids-health.jpg',
       title: 'Fifth Slide',
       description: 'Voluptatum deleniti atque corrupti quos.'
     }
@@ -116,11 +116,11 @@ export default function MainCarousel() {
             
             <div className="font-mono font-bold mb-8 max-w-7xl mx-auto text-center">
                     <p className="text-xs md:text-xl mb-6">
-                        <span className='text-blue-500 text-sm md:text-lg'>A</span>ction pour le 
+                        <span className='text-blue-500 text-sm md:text-lg'>A</span>ctions pour le 
                         <span className='text-green-600 text-sm md:text-lg'> B</span>ien-etre et la
                         <span className='text-red-700 text-sm md:text-lg'> C</span>ommunautaire et le 
                         <span className='text-yellow-500 text-sm md:text-lg'> D</span>eveloppement 
-                        <span className='text-blue-500 text-sm md:text-lg'> I</span>ntergral
+                        <span className='text-blue-500 text-sm md:text-lg'> I</span>ntegral
                     </p>
             </div>    
             <div className="bottom-1/3 max-w-7xl mx-auto text-center">
