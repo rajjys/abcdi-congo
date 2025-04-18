@@ -92,7 +92,7 @@ export default function MainCarousel() {
         </div>
       ))}
       {/* Text Overlay */}
-      <div className="absolute  top-1/7 right-0 left-0  p-4 md:p-6 text-white text-3xl">
+      <div className="absolute top-1/7 right-0 left-0  p-4 md:p-6 text-white text-3xl">
             <div className="flex flex-row justify-around md:justify-center items-center">
                 <div className='relative w-24 h-24 md:w-40 md:h-40'>
                     <Image 
