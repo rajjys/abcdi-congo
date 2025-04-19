@@ -1,11 +1,10 @@
 import Image from "next/image";
 import MainCarousel from "./components/MainCarousel";
-import { Domain } from "@mui/icons-material";
-import Link from "next/link";
 import ProjectCard from "./components/ProjectCard";
 import ImpactMetrics from "./components/ImpactMetrics";
 import PartnersCarousel from "./components/PartnersCarousel";
 import NewsletterSection from "./components/NewsLetterSection";
+import projects from "./dummyFiles/projects.json";
 
 
 export default function Home() {
@@ -71,55 +70,3 @@ export default function Home() {
     </div>
   );
 }
-
-//This is for testing purposes. Need to be fetched serverside
-const projects = [
-  {
-    title: "Projet Maman Autonaume",
-    description: "Vise à autonomiser les femmes par la formation et le soutien. Augmente la production alimentaire et la sécurité alimentaire.",
-    imageUrl: "/stock/black-woman-farm.webp",
-    domain: "Santé",
-    slug: "maman-autonome",
-    city: "Goma",
-  },
-  {
-    title: "Initiative Agricole Chakula",
-    description: "Augmente la production alimentaire durable et la sécurité alimentaire.",
-    imageUrl: "/stock/farm-initiative.jpg",
-    domain: "Agriculture",
-    slug: "ia-chakula",
-    city: "Goma",
-  },
-  {
-    title: "Santé Communautaire des Enfants",
-    description: "Favorise l'accès aux soins de santé pour les enfants défavorisés.",
-    imageUrl: "/stock/kids-health.jpg",
-    domain: "Santé",
-    slug: "sante-enfants",
-    city: "Bukavu",
-  },
-  {
-    title: "Programme d'Entrepreneuriat Féminin",
-    description: "Soutient les femmes entrepreneures par la formation et le financement.",
-    imageUrl: "/stock/woman-entrepreneur.jpg",
-    domain: "Entrepreneuriat",
-    slug: "entrepreneuriat-feminin",
-    city: "Kinshasa",
-  },
-  {
-    title: "Developpement Durable et Environnement",
-    description: "Sensibilise à la protection de l'environnement et à la durabilité.",
-    imageUrl: "/stock/construction.jpg",
-    domain: "Environnement",
-    slug: "developpement-durable",
-    city: "Lubumbashi",
-  },
-  {
-    title: "Formation en Compétences Numériques",
-    description: "Fournit des compétences numériques aux jeunes pour l'employabilité.",
-    imageUrl: "/stock/computer-training.jpg",
-    domain: "Technologie",
-    slug: "competences-numeriques",
-    city: "Kisangani",
-  }
-];
