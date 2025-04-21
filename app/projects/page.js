@@ -10,7 +10,7 @@ const Projects = () => {
     <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
           {/* Hero Section */}
           <section className="relative mb-16">
-            <div className="relative flex justify-center h-[40vh] sm:h-[80vh] md:h-[100vh] mb-8">
+            <div className="relative flex justify-center h-[50vh] sm:h-[80vh] md:h-[100vh] mb-8">
               <Image
                 src="/stock/couture.jpg"
                 alt="Femmes Couturières"

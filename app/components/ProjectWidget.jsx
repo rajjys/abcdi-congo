@@ -12,7 +12,7 @@ const ProjectWidget = ({ index, project }) => {
             </div>
             <div className='flex-1 flex flex-col justify-between'>
                 <div>
-                    <h3 className="text-lg sm:text-xl font-semibold font-mono text-green-900 dark:text-green-300 mt-2 px-2">{project.title}</h3>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-mono text-green-900 dark:text-green-300 mt-2 px-2">{project.title}</h3>
                     <p className="text-gray-600 dark:text-gray-200 text-xs sm:text-sm md:text-base mx-2 pt-2">{project.description}</p>
                 </div>
                 <div className="flex justify-between items-center my-2 pt-2 mt-2 border-t border-gray-400 md:px-2">

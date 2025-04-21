@@ -132,7 +132,7 @@ const Header = () => {
               <NavItem href="/projects" label="Projects" />
               <NavItem href="/news" label="News" />
               <NavItem href="/career" label="Career" />
-              <NavItem href="/contactus" label="Contact Us" />
+              <NavItem href="/contact-us" label="Contact Us" />
               
               {/* Donate Button */}
               <li>
