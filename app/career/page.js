@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 const CareerPage = () => {
@@ -58,9 +59,11 @@ const CareerPage = () => {
       {/* Hero Section */}
       <section className="relative mb-16">
         <div className="relative flex justify-center h-[50vh] sm:h-[80vh] md:h-[100vh] mb-8">
-          <img
+          <Image
             src="/stock/black-girls.webp"
             alt="Careers"
+            width={800}
+            height={400}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"></div>

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -88,6 +88,9 @@ const Footer = () => {
       {/* Copyright */}
       <div className="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
         <p>&copy; {new Date().getFullYear()} ABCDI-ONGD. Tous droits réservés.</p>
+        <p className="mt-2">
+          Site conçu par <a href="https://asimila.com" target="_blank" rel="noopener" className="hover:text-green-300">Asimila Technology</a>.
+        </p>
       </div>
     </footer>
   );
