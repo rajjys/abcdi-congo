@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <div>
       <MainCarousel />
-      <div className="border-b border-dashed border-green-300 dark:border-green-600 my-2 sm:my-4 md:my-6"></div>
-      <div className="mx-2 md:mx-0 sm:px-4 bg-gray-200 dark:bg-gray-800">
-            <div className="flex flex-wrap justify-center items-center md:px-24 md:px-2">
+      <div className="py-4 sm:py-6 md:py-8"></div>
+      <div className="mx-2 md:mx-0 sm:px-4">
+            <div className="flex flex-wrap justify-center items-center sm:px-4 md:px-8 lg:px-24">
               <div className="flex-col md:basis-1/2">
                 <Image
                   src="/stock/community.jpg"
@@ -35,8 +35,8 @@ export default function Home() {
               </div>
             </div>
       </div>
-      <div className="border-b border-dashed border-green-300 dark:border-green-600 my-2 sm:my-4 md:my-6"></div>
-      <div className="mx-2 sm:mx-6 sm:px-4 md:px-24 md:py-2 pt-1">
+      <div className="py-4 sm:py-6 md:py-8"></div>
+      <div className="sm:px-4 md:px-8 lg:px-24 md:py-2 pt-1">
         <h2 className="text-xl sm:text-2xl md:text-4xl text-green-900 font-bold font-mono dark:text-green-300 text-start block my-2 ml-2">Nos Projets</h2>
         <p className="text-gray-600 dark:text-gray-200 my-2 text-sm sm:text-base md:text-lg p-2 border-l-4 border-green-300 shadow-md bg-white/50 dark:bg-gray-900/50">
           Découvrez nos projets en cours et nos initiatives pour un avenir meilleur.
@@ -50,23 +50,23 @@ export default function Home() {
           ))}
           </div>
         </div>
-        <div className="border-b border-dashed border-green-300 dark:border-green-600 my-2 sm:my-4 md:my-6"></div>
-        <div className="bg-gray-200 dark:bg-gray-800 mx-2 md:mx-24 sm:px-4 md:px-2 pt-1">
+        <div className="py-4 sm:py-6 md:py-8"></div>
+        <div className="bg-gray-200 dark:bg-gray-800 sm:px-4 md:px-8 lg:px-32 md:py-2 pt-1">
           <div className="">
             <ImpactMetrics />
           </div>
         </div>
-        <div className="border-b border-dashed border-green-300 dark:border-green-600 my-4 sm:my-6 md:my-8"></div>
-        <div className="mx-2 sm:mx-6 sm:px-4 md:px-24 md:py-2 pt-1">
+        <div className="py-4 sm:py-6 md:py-8"></div>
+        <div className="sm:px-4 md:px-8 lg:px-32 md:py-2 pt-1">
           <div className="">
             <PartnersCarousel />
           </div>
         </div>
-        <div className="border-b border-dashed border-green-300 dark:border-green-600 my-2 sm:my-4 md:my-6"></div>
+        <div className="py-4 sm:py-6 md:py-8"></div>
         <div className="sm:px-4 md:px-24 md:py-2 pt-1 bg-gray-200 dark:bg-gray-800 ">
             <NewsletterSection />
         </div>
-        <div className="border-b border-dashed border-green-300 dark:border-green-600 my-2 sm:my-4 md:my-6"></div>
+        <div className="py-4 sm:py-6 md:py-8"></div>
     </div>
   );
 }

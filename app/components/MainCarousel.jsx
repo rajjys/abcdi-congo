@@ -70,7 +70,7 @@ export default function MainCarousel() {
   }, [activeIndex]);
 
   return (
-    <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] overflow-hidden">
+    <div className="relative flex justify-center h-[50vh] sm:h-[80vh] md:h-[100vh]">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -88,50 +88,31 @@ export default function MainCarousel() {
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII="
             />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent"></div>
           </div>
         </div>
       ))}
       {/* Text Overlay */}
-      <div className="absolute top-1/7 right-0 left-0  p-4 md:p-6 text-white text-3xl">
-            <div className="flex flex-row justify-around md:justify-center items-center">
-                <div className='relative w-24 h-24 md:w-40 md:h-40'>
-                    <Image 
-                        src="/logo_abcdi.png"
-                        fill
-                        alt="ABCDI Logo"
-                        className="bg-white/80 rounded-full mx-2 md:mx-12"
-                    />
-                </div>
-                
-                <div className='font-mono text-xl md:text-6xl font-bold mx-4 md:mx-12'>
-                    <span className='text-blue-500 pr-1 md:pr-2'>A</span>
-                    <span className='text-green-600 pr-1 md:pr-2'>B</span>
-                    <span className='text-red-700 pr-1 md:pr-2'>C</span>
-                    <span className='text-yellow-500 pr-1 md:pr-2'>D</span>
-                    <span className='text-blue-500'>I</span>
-                    <span className='text-green-300 pr-1 md:px-2'> - </span>
-                    <span className='underline decoration-green-300'>asbl</span>
-                </div>
-            </div>
+      <div className="absolute top-1/5 right-0 left-0 bottom-0 p-4 md:p-6 text-white text-3xl">
+        <div className='relative z-10 flex flex-col items-center justify-center h-full'>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-center mb-4 sm:mb-8 md:mb-12"
+                style={{ fontFamily: 'Eagle Horizon' }}
+          >
+            Contruisons Ensemble
+          </h1>
+          <h2 className="text-xl sm:text-2xl md:text-4xl text-center mb-4 sm:mb-8 md:mb-12">
+            ABCDI - ONGD
+          </h2>
+          <button className="">
+          <Link
+                  href="/donate"
+                  className="inline-flex items-center font-medium justify-center px-6 py-2 rounded-full cursor-pointer text-sm md:text-lg text-gray-200  
+                          dark:hover:text-white bg-green-600 hover:bg-green-800 dark:hover:bg-green-800 border border-white transition-colors" >
+                  Faire Un Don
+                </Link>
+          </button>
+        </div>
             
-            <div className="font-mono font-bold mb-8 max-w-7xl mx-auto text-center">
-                    <p className="text-xs md:text-xl mb-6">
-                        <span className='text-blue-500 text-sm md:text-lg'>A</span>ctions pour le 
-                        <span className='text-green-600 text-sm md:text-lg'> B</span>ien-etre et la
-                        <span className='text-red-700 text-sm md:text-lg'> C</span>ommunautaire et le 
-                        <span className='text-yellow-500 text-sm md:text-lg'> D</span>eveloppement 
-                        <span className='text-blue-500 text-sm md:text-lg'> I</span>ntegral
-                    </p>
-            </div>    
-            <div className="bottom-1/3 max-w-7xl mx-auto text-center">
-                <p className='mt-12 md:mt-24 md:mt-12 text-xs sm:text-sm md:text-2xl bg-black/50 backdrop-blur rounded-full p-2 md:p-4 text-green-400'>
-                    Promotion de l'Agriculture 
-                    <span className='px-2 text-white'>|</span> 
-                    Securite Alimentaire 
-                    <span className='px-2 text-white'>|</span> Sante Publique
-                    <span className='px-2 text-white'>|</span> Entrepreneuriat 
-                </p>
-            </div>
       </div>
         <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-40 h-1 z-20 bg-gray-200">
           <div 

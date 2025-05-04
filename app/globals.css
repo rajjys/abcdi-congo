@@ -1,5 +1,10 @@
 @import "tailwindcss";
-
+@font-face {
+  font-family: 'Eagle Horizon';
+  src: url('/fonts/EagleHorizon.ttf') format('truetype');
+  font-weight: light;
+  font-style: normal;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;

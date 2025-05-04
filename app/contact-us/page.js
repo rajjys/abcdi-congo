@@ -46,7 +46,9 @@ const ContactUs = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"></div>
           <div className="absolute bottom-8 left-8 text-white font-bold">
-            <p className="text-3xl sm:text-4xl md:text-5xl">Contactez-Nous</p>
+          <p className="ml-4 sm:ml-8 md:ml-12 text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'Eagle Horizon' }}>
+            Nous Contacter
+          </p>
           </div>
         </div>
       </section>

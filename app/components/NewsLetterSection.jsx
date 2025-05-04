@@ -42,7 +42,7 @@ const NewsletterSection = () => {
   };
 
   return (
-    <div className="py-16 px-4 rounded-lg shadow-lg">
+    <div className="py-16 px-4">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-green-900 dark:text-green-300 mb-4">
           Restez informé de nos actions communautaires

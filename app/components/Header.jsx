@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import NavItem from './Navtem';
 
 const Header = () => {
     const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
@@ -15,39 +16,52 @@ const Header = () => {
       { code: 'en', label: 'English', flag: '/flags/us.svg' },
     ];
   
-    // Close dropdowns when clicking outside
+    // Close dropdowns and mobile menu when clicking outside or pressing Escape
     useEffect(() => {
       const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        if (
+          !dropdownRef.current?.contains(event.target) &&
+          !mobileMenuRef.current?.contains(event.target) &&
+          event.target instanceof Element && !event.target.closest('.menu-toggle')
+      ) {
           setIsLanguageDropdownOpen(false);
-        }
-        if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
           setIsMobileMenuOpen(false);
-        }
+      }
       };
-  
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
-  
-    // Close dropdowns on ESC press
-    useEffect(() => {
+
       const handleEscape = (event) => {
-        if (event.key === 'Escape') {
-          setIsLanguageDropdownOpen(false);
-          setIsMobileMenuOpen(false);
-        }
+          if (event.key === 'Escape') {
+              setIsLanguageDropdownOpen(false);
+              setIsMobileMenuOpen(false);
+          }
       };
-  
+
+      document.addEventListener('mousedown', handleClickOutside);
       document.addEventListener('keydown', handleEscape);
-      return () => document.removeEventListener('keydown', handleEscape);
-    }, []);
+
+      return () => {
+          document.removeEventListener('mousedown', handleClickOutside);
+          document.removeEventListener('keydown', handleEscape);
+      };
+  }, []);
   
-    const handleLanguageSelect = (code) => {
+
+    const toggleMobileMenu = () => {
+      setIsMobileMenuOpen((prevState) => !prevState);
+  };
+
+  const toggleLanguageDropdown = () => {
+      setIsLanguageDropdownOpen((prevState) => !prevState);
+  };
+
+  const handleLanguageSelect = (code) => {
       setSelectedLanguage(code);
       setIsLanguageDropdownOpen(false);
-    };
-  
+  };
+
+  const handleNavLinkClick = () => {
+      setIsMobileMenuOpen(false); // Close the mobile menu when a link is clicked
+  }
     return (
       <nav className="bg-white/50 border-gray-200 dark:bg-gray-900/50 mx-1 md:mx-2 mt-1 md:mt-4 rounded-lg md:rounded-full fixed top-0 left-0 right-0 z-50 backdrop-blur-md shadow-lg">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1 md:p-2">
@@ -72,7 +86,7 @@ const Header = () => {
             <div className="relative" ref={dropdownRef}>
               <button
                 type="button"
-                onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                onClick={toggleLanguageDropdown}
                 className="inline-flex items-center font-medium justify-center px-2 md:px-5 py-2.5 text-sm text-gray-900 dark:text-white rounded-lg 
                 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white" >
                 <Image
@@ -114,9 +128,9 @@ const Header = () => {
             </div>
   
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={toggleMobileMenu}
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden 
+              className="menu-toggle inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden 
               hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"  >
                 <span className="sr-only">Open menu</span>
                 <svg className="w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 17 14">
@@ -128,18 +142,19 @@ const Header = () => {
           <div ref={mobileMenuRef} className={`items-center justify-between w-full md:flex md:w-auto md:order-1 transition-all 
                         duration-300 ${ isMobileMenuOpen ? 'block' : 'hidden' }`} >
             <ul className="flex flex-col font-medium p-4 md:p-0 rounded-lg md:rounded-full md:space-x-4 rtl:space-x-reverse md:flex-row">
-              <NavItem href="/about" label="About Us" className="md:rounded-l-full" />
-              <NavItem href="/projects" label="Projects" />
-              <NavItem href="/news" label="News" />
-              <NavItem href="/career" label="Career" />
-              <NavItem href="/contact-us" label="Contact Us" />
+              <NavItem href="/about" label="A Propos" className="md:rounded-l-full" onClick={handleNavLinkClick} />
+              <NavItem href="/projects" label="Projets" onClick={handleNavLinkClick} />
+              <NavItem href="/news" label="Actualites" onClick={handleNavLinkClick}/>
+              <NavItem href="/career" label="Carierre" onClick={handleNavLinkClick}/>
+              <NavItem href="/contact-us" label="Contacts" onClick={handleNavLinkClick}/>
               
               {/* Donate Button */}
               <li>
                 <Link
                   href="/donate"
                   className="inline-flex items-center font-medium justify-center px-6 py-2 rounded-full cursor-pointer text-sm md:text-lg text-gray-200  
-                          dark:hover:text-white bg-green-600 hover:bg-green-800 dark:hover:bg-green-800 border border-white transition-colors" >
+                          dark:hover:text-white bg-green-600 hover:bg-green-800 dark:hover:bg-green-800 border border-white transition-colors" 
+                          onClick={handleNavLinkClick}>
                   Donate
                 </Link>
               </li>
@@ -150,15 +165,8 @@ const Header = () => {
     );
   };
   
-  const NavItem = ({ href, label, className }) => (
-    <li >
-      <Link
-        href={href}
-        className={`inline-flex items-center font-medium justify-center px-4 py-2 text-sm md:text-lg text-gray-900 dark:text-white rounded-lg 
-                cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white ${className}`}>
-        {label}
-      </Link>
-    </li>
-  );
+  
   
 export default Header;
+
+
