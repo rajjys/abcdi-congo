@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
+import { GET_NEWS_ITEMS, graphcms } from '../services/graphcms';
+import NewsWidget from '../components/NewsWidget';
 
-const News = () => {
+const News = async () => {
+  const { newsItems }= await graphcms.request(GET_NEWS_ITEMS);
+
+
   return (
     <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       {/* Hero Section */}
@@ -17,12 +22,21 @@ const News = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"></div>
           <div className="absolute bottom-0 sm:bottom-4 md:bottom-8 left-8 text-white font-bold">
-          <p className="ml-4 sm:ml-8 md:ml-12 text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'Eagle Horizon' }}>Informations</p>
+          <p className="ml-4 sm:ml-8 md:ml-12 text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'Eagle Horizon' }}>Actualites</p>
           </div>
         </div>
       </section>
-      <div className="mx-2 sm:mx-6 sm:px-4 md:px-24 py-4 md:py-6">
-        <p className="text-center text-lg font-medium">Aucune Informations Disponibles</p>
+      {/* News Section */}
+      <div className="mx-2 sm:mx-6 sm:px-4 md:px-10 lg:px-24 pt-1">
+        {newsItems ? (
+          <div className="">
+            {newsItems.map((news, index) => (
+              <NewsWidget index={index} news={news} key={index}/>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-lg font-medium">Aucune Informations Disponibles</p>
+        )}
       </div>
     </div>
   )

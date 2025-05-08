@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import ImpactMetrics from '../components/ImpactMetrics'
-import projects from '../dummyFiles/projects.json'
+import projects from '../dummyFiles/projects.json' ///to be replaced with API call
 import ProjectWidget from '../components/ProjectWidget'
 import NewsletterSection from '../components/NewsLetterSection'
+
+
 
 const Projects = () => {
   return (

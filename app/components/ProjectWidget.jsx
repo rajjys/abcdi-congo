@@ -24,5 +24,4 @@ const ProjectWidget = ({ index, project }) => {
         </Link>
   )
 }
-
 export default ProjectWidget
