@@ -5,7 +5,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const SocialBanner = (shareUrl, shareText) => {
+const SocialBanner = ({shareUrl, shareText}) => {
   return (
     <div className="flex justify-end items-center space-x-4 mt-4 text-sm sm:text-base md:text-lg mt-2 text-gray-400 mb-4 sm:mb-6 md:mb-8 pb-2 sm:pb-4 md:pb-6 border-b border-gray-400">
                 <span>PARTAGER:</span>

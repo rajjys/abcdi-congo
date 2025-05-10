@@ -19,7 +19,7 @@ const NavItem = ({
         <li>
             <Link
                 href={href}
-                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm md:text-lg text-gray-900 dark:text-white rounded-lg 
+                className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm md:text-base lg:text-lg text-gray-900 dark:text-white rounded-lg 
                 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
                 onClick={handleClick} // Use the new handler
             >

@@ -14,9 +14,10 @@ import Image from 'next/image';
 const NewsPage = async ({ params }) => {
   const { slug } = await params; // Extract the slug from the URL
   const newsItem = await fetchNewsItem(slug);
+  
   const shareUrl = `https://abcdi.org/news/${slug}`;
-  const shareText = encodeURIComponent(newsItem.title);
-  console.log(newsItem)
+  const shareText = encodeURIComponent(newsItem.title); 
+  
   if (!newsItem) {
     return (
       <div className="text-center py-8">
@@ -54,7 +55,7 @@ const NewsPage = async ({ params }) => {
       </section>
       <section className='container mx-auto px-4 sm:px-8 lg:px-16 mb-8 pb-8'>
           {/* Social Media Links */}
-          <SocialBanner shareUrl shareText/>
+          <SocialBanner shareUrl={shareUrl} shareText={shareText} />
           <div className="prose dark:prose-invert max-w-none margin-auto px-4 sm:px-6 md:px-8 lg:px-12 md:mx-12 lg:mx-18">  
           {/* Render the rich text content */}
           <RichTextViewer description={newsItem.description} title = {newsItem.title}/>

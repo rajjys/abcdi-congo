@@ -2,9 +2,10 @@ import Image from 'next/image'
 import React from 'react'
 import { fetchNewsItems } from '../services/graphcms';
 import NewsWidget from '../components/NewsWidget';
+export const dynamic = 'force-dynamic'; // Force dynamic rendering
 
 const News = async () => {
-  const { newsItems } = await fetchNewsItems();
+  const newsItems = await fetchNewsItems();
   return (
     <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       {/* Hero Section */}
