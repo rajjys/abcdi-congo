@@ -14,7 +14,9 @@ export const fetchNewsItem = async (slug) => {
 };
 
 export const fetchNewsItems = async () => {
-  const data = await graphcms.request(GET_NEWS_ITEMS);
+  const data = await graphcms.request(GET_NEWS_ITEMS, {}, {
+    next: { revalidate: 60 } // 1 minute cache
+  });
   return data; // Return the news items
 }
 export const fetchProjects = async () => {

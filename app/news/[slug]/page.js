@@ -54,8 +54,8 @@ const NewsPage = async ({ params }) => {
       </section>
       <section className='container mx-auto px-4 sm:px-8 lg:px-16 mb-8 pb-8'>
           {/* Social Media Links */}
-          <SocialBanner shareUrl shareText />
-          <div className="prose dark:prose-invert max-w-none margin-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <SocialBanner shareUrl shareText/>
+          <div className="prose dark:prose-invert max-w-none margin-auto px-4 sm:px-6 md:px-8 lg:px-12 md:mx-12 lg:mx-18">  
           {/* Render the rich text content */}
           <RichTextViewer description={newsItem.description} title = {newsItem.title}/>
         </div>
