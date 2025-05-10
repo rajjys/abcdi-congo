@@ -1,12 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import { GET_NEWS_ITEMS, graphcms } from '../services/graphcms';
+import { fetchNewsItems } from '../services/graphcms';
 import NewsWidget from '../components/NewsWidget';
 
 const News = async () => {
-  const { newsItems }= await graphcms.request(GET_NEWS_ITEMS);
-
-
+  const { newsItems } = await fetchNewsItems();
   return (
     <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       {/* Hero Section */}
@@ -29,7 +27,7 @@ const News = async () => {
       {/* News Section */}
       <div className="mx-2 sm:mx-6 sm:px-4 md:px-10 lg:px-24 pt-1">
         {newsItems ? (
-          <div className="">
+          <div className="group">
             {newsItems.map((news, index) => (
               <NewsWidget index={index} news={news} key={index}/>
             ))}

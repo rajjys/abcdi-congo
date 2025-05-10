@@ -1,3 +1,5 @@
+// Created by: Jonathan Idy
+// Date: 
 import Image from 'next/image'
 import React from 'react'
 import ImpactMetrics from '../components/ImpactMetrics'

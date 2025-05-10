@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import NavItem from './Navtem';
+import NavItem from './NavItem';
 
 const Header = () => {
     const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
