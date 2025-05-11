@@ -27,15 +27,16 @@ const News = async () => {
       </section>
       {/* News Section */}
       <div className="mx-2 sm:mx-6 sm:px-4 md:px-10 lg:px-24 pt-1">
-        {newsItems ? (
-          <div className="group">
-            {newsItems.map((news, index) => (
+        <div className="group">
+        {newsItems && newsItems.length > 0 ? (
+            newsItems.map((news, index) => (
               <NewsWidget index={index} news={news} key={index}/>
-            ))}
-          </div>
+            ))
+          
         ) : (
           <p className="text-center text-lg font-medium">Aucune Informations Disponibles</p>
         )}
+        </div>
       </div>
     </div>
   )

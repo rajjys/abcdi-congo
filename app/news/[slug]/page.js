@@ -21,7 +21,7 @@ const NewsPage = async ({ params }) => {
   if (!newsItem) {
     return (
       <div className="text-center py-8">
-        <h1 className="text-2xl font-bold">News item not found</h1>
+        <h1 className="text-2xl font-bold">Aucune Information Trouvee</h1>
       </div>
     );
   }

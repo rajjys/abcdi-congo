@@ -6,10 +6,12 @@ import ImpactMetrics from '../components/ImpactMetrics'
 import projects from '../dummyFiles/projects.json' ///to be replaced with API call
 import ProjectWidget from '../components/ProjectWidget'
 import NewsletterSection from '../components/NewsLetterSection'
+import { fetchProjectItems } from '../services/graphcms'
+export const dynamic = 'force-dynamic'; // Force dynamic rendering
 
 
-
-const Projects = () => {
+const Projects = async () => {
+  const projectItems = await fetchProjectItems();
   return (
     <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
           {/* Hero Section */}
@@ -35,11 +37,14 @@ const Projects = () => {
             <p className="text-gray-600 dark:text-gray-200 my-2 text-sm sm:text-base md:text-lg p-2 border-l-4 border-green-300 shadow-md bg-white/50 dark:bg-gray-900/50">
               Découvrez nos projets en cours et nos initiatives pour un avenir meilleur.
             </p>
-            <div className="">
-              {projects.map((project, index) => (
-                <ProjectWidget index={index} project={project} key={index}/>
-                // <ProjectCard
-              ))}
+            <div className="group">
+              {projectItems && projectItems.length > 0 ? (
+                  projectItems.map((projectItem, index) => (
+                    <ProjectWidget index={index} project={projectItem} key={index} />
+                  ))
+                  ) : (
+                  <p className="text-gray-500 dark:text-gray-400">Aucun projet disponible pour le moment.</p>
+                  )}
             </div>
           </section>
           {/* Impact Metrics Section */}

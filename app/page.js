@@ -5,6 +5,7 @@ import ImpactMetrics from "./components/ImpactMetrics";
 import PartnersCarousel from "./components/PartnersCarousel";
 import NewsletterSection from "./components/NewsLetterSection";
 import projects from "./dummyFiles/projects.json";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -41,14 +42,18 @@ export default function Home() {
         <p className="text-gray-600 dark:text-gray-200 my-2 text-sm sm:text-base md:text-lg p-2 border-l-4 border-green-300 shadow-md bg-white/50 dark:bg-gray-900/50">
           Découvrez nos projets en cours et nos initiatives pour un avenir meilleur.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+          {projects.slice(0, 3).map((project, index) => (
             <ProjectCard
               key={index}
               project={project}
             />
           ))}
           </div>
+          <Link href={"/projects"} className="flex justify-end ">
+            <span className="text-xs sm:text-sm md:text-base font-bold text-gray-900 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-300 bg-gray-100 dark:bg-gray-900/50 rounded-md shadow-md p-4 transition duration-300">Tous les Projets {">>"}</span>
+           
+          </Link>
         </div>
         <div className="py-4 sm:py-6 md:py-8"></div>
         <div className="bg-gray-200 dark:bg-gray-800 sm:px-4 md:px-8 lg:px-32 md:py-2 pt-1">
