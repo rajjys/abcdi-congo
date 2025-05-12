@@ -37,6 +37,30 @@ export const fetchProjectItem = async (slug) => {
   return projects[0]; // Return the first matching project item
 } 
 
+// Fetch about information
+// This function fetches about information from the GraphQL API
+// It uses the GraphQL query defined in GET_ABOUT
+export const fetchAbout = async () => {
+  const {aboutItems} = await graphcms.request(GET_ABOUT);
+  return aboutItems[0]; // Return the about items
+}
+
+// Fetch all team members
+// This function fetches all team members from the GraphQL API
+// It uses the GraphQL query defined in GET_TEAM_MEMBERS
+export const fetchTeamMembers = async () => {
+  const {memberItems} = await graphcms.request(GET_TEAM_MEMBERS);
+  return memberItems; // Return the team members
+}
+// Fetch a single team member by slug
+// This function fetches a single team member based on the provided slug
+// It uses the GraphQL query defined in GET_TEAM_MEMBER
+export const fetchTeamMember = async (slug) => {
+  const {teamMembers} = await graphcms.request(GET_TEAM_MEMBER, { slug });
+  return teamMembers[0]; // Return the first matching team member
+}
+
+// GraphQL queries
 export const GET_NEWS_ITEMS = `
     query NewsItem {
     newsItems(orderBy: createdAt_DESC) {
@@ -103,6 +127,49 @@ export const GET_PROJECT_ITEM = `
     }
     slug
     title
+  }
+}
+`
+export const GET_ABOUT = `
+query ProjectQuery {
+  aboutItems {
+    about
+    mission
+    objectives
+    profile {
+      url(transformation: {image: {resize: {height: 500, width: 900}}})
+    }
+  }
+}
+`
+export const GET_TEAM_MEMBERS = `
+query TeamQuery {
+  memberItems {
+    name
+    profile {
+      url(transformation: {image: {resize: {height: 380, width: 700}}})
+    }
+    slug
+    role
+  }
+}
+`
+export const GET_TEAM_MEMBER = `
+query TeamMember($slug: String!) {
+  teamMembers: memberItems(where: { slug: $slug }) {
+    description {
+      raw
+    }
+    email
+    name
+    phone
+    profile {
+      url(transformation: {image: {resize: {height: 380, width: 700}}})
+    }
+    slug
+    social
+    role
+    id
   }
 }
 `

@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import NavItem from './NavItem';
+import DonateButton from './ui/DonateButton';
 
 const Header = () => {
     const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
@@ -148,7 +149,7 @@ const Header = () => {
             className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 transition-all 
               duration-300 ease-in-out ${isMobileMenuOpen ? 'block' : 'hidden'}`}
           >
-            <ul className="flex flex-col font-medium p-4 lg:p-0 rounded-lg lg:rounded-full lg:space-x-2 xl:space-x-4 rtl:space-x-reverse lg:flex-row">
+            <ul className="flex flex-col font-medium p-4 lg:p-0 rounded-lg lg:rounded-full lg:space-x-2 xl:space-x-4 rtl:space-x-reverse lg:flex-row group">
               <NavItem href="/about" label="A Propos" className="lg:rounded-l-full" onClick={handleNavLinkClick} />
               <NavItem href="/projects" label="Projets" onClick={handleNavLinkClick} />
               <NavItem href="/news" label="Actualites" onClick={handleNavLinkClick}/>
@@ -156,15 +157,8 @@ const Header = () => {
               <NavItem href="/contact-us" label="Contacts" onClick={handleNavLinkClick}/>
               
               {/* Donate Button */}
-              <li className="mt-2 lg:mt-0">
-                <Link
-                  href="/donate"
-                  className="inline-flex items-center font-medium justify-center px-4 py-2 rounded-full cursor-pointer text-sm lg:text-base text-gray-200  
-                    dark:hover:text-white bg-green-600 hover:bg-green-800 dark:hover:bg-green-800 border border-white transition-colors" 
-                  onClick={handleNavLinkClick}
-                >
-                  Donate
-                </Link>
+              <li className="mt-2 flex justify-center lg:inline">
+                <DonateButton label={"Faire un Don"} link={"/donate"} onClick={handleNavLinkClick} />
               </li>
             </ul>
           </div>

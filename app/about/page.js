@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import { TeamMember } from '../components/TeamMember';
+import { fetchAbout, fetchTeamMembers } from '../services/graphcms';
 
-const AboutPage = () => {
+const AboutPage = async() => {
+  const about = await fetchAbout();
+  const teamMembers = await fetchTeamMembers();
+
   return (
     <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       {/* Hero Section */}
@@ -35,28 +39,25 @@ const AboutPage = () => {
                 Notre Mission
               </h2>
               <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
-                ABCDI ONGD a pour objet global la promotion de la sécurité alimentaire par l'agriculture, 
-                la santé et le bien-être communautaire ainsi que le développement de toutes les couches 
-                sociales et leur accompagnement.
+                {about.mission}
               </p>
               
               <h3 className="text-2xl font-semibold text-gray-700 dark:text-gray-200 mt-6 mb-4">
                 Objectifs Spécifiques:
               </h3>
               <ul className="list-disc pl-6 space-y-3 text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">
-                <li>Promouvoir l'agriculture durable et la sécurité alimentaire en RDC</li>
-                <li>Accompagner les populations vulnérables dans l'entreprenariat</li>
-                <li>Développer la santé communautaire et la cohésion sociale</li>
-                <li>Vulgariser les techniques agricoles et d'hygiène dans les communautés</li>
-                <li>Encadrer les enfants sans abri et les couches sociales défavorisées</li>
-                <li>Créer des centres de formation et de sensibilisation</li>
+                {about.objectives.map((objective, index) => (
+                  <li key={index} className="mb-2">
+                    {objective}
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Mission Image */}
             <div className="flex-1 shadow-lg">
               <Image
-                src="/stock/community.jpg"
+                src={about.profile.url}
                 alt="Community"
                 width={800}
                 height={800}
@@ -67,26 +68,18 @@ const AboutPage = () => {
 </section>
 
       {/* Team Section */}
-      <section className="container mx-auto px-4 sm:px-8 lg:px-16 my-16">
+      <section className="container mx-auto px-4 sm:px-8 lg:px-16 mt-16 pb-16">
         <h2 className="text-4xl font-extrabold text-green-700 mb-12 text-center">
           Notre Équipe
         </h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <TeamMember 
-            image="/stock/jospin2.jpg"
-            name="Jospin Yampanya"
-            role="Directeur Exécutif"
-          />
-          <TeamMember 
-            image="/stock/judith.jpg"
-            name="Judith Tussi"
-            role="Coordinatrice des Projets"
-          />
-          <TeamMember 
-            image="/stock/obama.jpg"
-            name="Patrick Mbuyi"
-            role="Agronome Principal"
-          />
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 group">
+          {teamMembers && teamMembers.length > 0 &&
+          teamMembers.map((member) => (
+            <TeamMember 
+              key={member.id + member.slug}
+              member = {member}
+            />
+          ))}
         </div>
       </section>
     </div>

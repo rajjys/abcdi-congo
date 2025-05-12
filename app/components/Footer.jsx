@@ -24,9 +24,9 @@ const Footer = () => {
           <h4 className="font-semibold mb-3">Liens Rapides</h4>
           <ul className="space-y-2">
             <li><a href="/about" className="hover:text-green-300 transition">À Propos</a></li>
-            <li><a href="/impact" className="hover:text-green-300 transition">Notre Impact</a></li>
-            <li><a href="/get-involved" className="hover:text-green-300 transition">S'impliquer</a></li>
+            <li><a href="/projects" className="hover:text-green-300 transition">Nos Projets</a></li>
             <li><a href="/news" className="hover:text-green-300 transition">Actualites</a></li>
+            <li><a href="/donate" className="hover:text-green-300 transition">Faire un Don</a></li>
           </ul>
         </div>
 
@@ -79,8 +79,8 @@ const Footer = () => {
           <div className="mt-6 text-sm space-y-1">
             <p>Numéro d'enregistrement: 012-345/F12345</p>
             <p>Compte Bancaire: XXXXXXXX (Rawbank)</p>
-            <a href="/privacy" className="block hover:text-green-300">Politique de confidentialité</a>
-            <a href="/annual-report" className="block hover:text-green-300">Rapport Annuel 2023</a>
+            <a href="/#" className="block hover:text-green-300">Politique de confidentialité</a>
+            <a href="/#" className="block hover:text-green-300">Rapport Annuel 2023</a>
           </div>
         </div>
       </div>

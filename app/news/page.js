@@ -26,7 +26,7 @@ const News = async () => {
         </div>
       </section>
       {/* News Section */}
-      <div className="mx-2 sm:mx-6 sm:px-4 md:px-10 lg:px-24 pt-1">
+      <div className="mx-2 sm:mx-6 sm:px-4 md:px-10 lg:px-24 pb-8">
         <div className="group">
         {newsItems && newsItems.length > 0 ? (
             newsItems.map((news, index) => (

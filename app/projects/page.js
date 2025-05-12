@@ -48,13 +48,11 @@ const Projects = async () => {
             </div>
           </section>
           {/* Impact Metrics Section */}
-          <div className="border-b border-dashed border-green-300 dark:border-green-600 my-4"></div>
           <section className="bg-gray-200 dark:bg-gray-800 sm:px-4 sm:px-6 md:px-12 lg:px-24 pt-1">
             <div className="">
               <ImpactMetrics />
             </div>
           </section>
-          <div className="border-b border-dashed border-green-300 dark:border-green-600 my-4 sm:my-6 md:my-8"></div>
           {/* Newsletter Section */}
           <NewsletterSection />
     </div>

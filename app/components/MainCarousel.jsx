@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import DonateButton from './ui/DonateButton';
 
 export default function MainCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -104,12 +105,7 @@ export default function MainCarousel() {
             ABCDI - ONGD
           </h2>
           <button className="">
-          <Link
-                  href="/donate"
-                  className="inline-flex items-center font-medium justify-center px-6 py-2 rounded-full cursor-pointer text-sm md:text-lg text-gray-200  
-                          dark:hover:text-white bg-green-600 hover:bg-green-800 dark:hover:bg-green-800 border border-white transition-colors" >
-                  Faire Un Don
-                </Link>
+          <DonateButton label={"Faire un Don"} link={"/donate"} />
           </button>
         </div>
             
