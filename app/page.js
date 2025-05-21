@@ -23,27 +23,30 @@ export default async function Home() {
     <div>
       <MainCarousel />
       <div className="py-4 sm:py-6 md:py-8"></div>
-      <div className="mx-2 md:mx-0 sm:px-4">
-            <div className="flex flex-wrap justify-center items-center sm:px-4 md:px-8 lg:px-24">
-              <div className="flex-col md:basis-1/2">
-                <Image
-                  src="/stock/community.jpg"
-                  alt="ABCDI Logo"
-                  width={580}
-                  height={400}
-                  className="rounded-t-md md:rounded-none"/>
-              </div>
-              <div className="md:basis-1/2">
-                <h2 className="text-xl sm:text-2xl md:text-4xl text-green-900 dark:text-green-300 font-bold font-mono my-2 ml-2">Qui Sommes Nous ?</h2>
-                <p className="text-gray-600 dark:text-gray-200 my-2 text-sm sm:text-base md:text-lg p-2 border-l-4 border-green-300 shadow-md bg-white/50 dark:bg-gray-900/50">
-                  ABCDI - asbl est une organisation à but non lucratif qui œuvre pour le bien-être de la communauté et le développement durable.
-                </p>
-                <p className="text-gray-500 dark:text-gray-300 mt-2 text-xs sm:text-sm md:text-lg p-2 shadow-md">
-                  Notre mission est de promouvoir l'agriculture durable, la sécurité alimentaire, la santé publique et l'entrepreneuriat au sein de notre communauté.
-                  Nous croyons fermement que le développement durable est la clé pour un avenir meilleur et plus équitable pour tous.
-                </p> 
-              </div>
-            </div>
+      <div className="flex flex-col sm:flex-row justify-center items-stretch lg:px-24 bg-white/50 dark:bg-gray-900/50">
+        {/* Image Container */}
+        <div className="w-full sm:basis-1/2 flex items-stretch">
+          <Image
+            src="/stock/community.jpg"
+            alt="ABCDI Logo"
+            width={580}
+            height={400}
+            className="rounded-t-md sm:rounded-none object-cover w-full h-full"
+          />
+        </div>
+        
+        {/* About Section */}
+        <div className="w-full sm:basis-1/2 flex flex-col justify-center p-4 h-full md:ml-4">
+          <h2 className="text-xl sm:text-2xl md:text-4xl text-green-900 dark:text-green-300 font-bold font-mono my-2">
+            Qui Sommes Nous ?
+          </h2>
+          <p className="text-gray-600 dark:text-gray-200 my-2 text-sm sm:text-base md:text-lg p-2 border-l-4 border-green-300 shadow-md">
+            ABCDI - asbl est une organisation à but non lucratif qui œuvre pour le bien-être de la communauté et le développement durable.
+          </p>
+          <p className="text-gray-500 dark:text-gray-300 mt-2 text-xs sm:text-sm md:text-lg p-2 shadow-md">
+            Notre mission est de promouvoir l'agriculture durable, la sécurité alimentaire, la santé publique et l'entrepreneuriat au sein de notre communauté.
+          </p> 
+        </div>
       </div>
       <div className="py-4 sm:py-6 md:py-8"></div>
       <div className="sm:px-4 md:px-8 lg:px-24 md:py-2 pt-1">

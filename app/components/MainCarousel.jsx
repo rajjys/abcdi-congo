@@ -71,7 +71,7 @@ export default function MainCarousel() {
   }, [activeIndex]);
 
   return (
-    <div className="relative flex justify-center h-[50vh] sm:h-[80vh] md:h-[100vh]">
+    <div className="relative flex justify-center h-[75vh] sm:h-[90vh] md:h-[100vh]">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
