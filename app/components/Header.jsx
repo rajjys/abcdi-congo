@@ -147,8 +147,7 @@ const Header = () => {
           <div 
             ref={mobileMenuRef} 
             className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 transition-all 
-              duration-300 ease-in-out ${isMobileMenuOpen ? 'block' : 'hidden'}`}
-          >
+              duration-300 ease-in-out ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
             <ul className="flex flex-col font-medium p-4 lg:p-0 rounded-lg lg:rounded-full lg:space-x-2 xl:space-x-4 rtl:space-x-reverse lg:flex-row group">
               <NavItem href="/about" label="A Propos" className="lg:rounded-l-full" onClick={handleNavLinkClick} />
               <NavItem href="/projects" label="Projets" onClick={handleNavLinkClick} />
@@ -157,7 +156,7 @@ const Header = () => {
               <NavItem href="/contact-us" label="Contacts" onClick={handleNavLinkClick}/>
               
               {/* Donate Button */}
-              <li className="mt-2 flex justify-center lg:inline">
+              <li className="lg:pt-2.5 flex justify-center lg:inline">
                 <DonateButton label={"Faire un Don"} link={"/donate"} onClick={handleNavLinkClick} />
               </li>
             </ul>

@@ -131,7 +131,7 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="container mx-auto px-4 sm:px-8 lg:px-16 mb-16">
+      <section className="container mx-auto px-4 sm:px-8 lg:px-16 pb-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-green-700 mb-8 text-center">
           Nos Coordonnées
         </h2>
