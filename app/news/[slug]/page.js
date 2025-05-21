@@ -38,7 +38,7 @@ const NewsPage = async ({ params }) => {
             priority
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-tr from-black/85 via-black/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/75 via-black/50 to-transparent"></div>
           <div className="absolute bottom-4 sm:bottom-8 md:bottom-16 left-4 sm:left-8 md:left-12 text-white  w-full max-w-4xl">
             <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
               {newsItem.title}

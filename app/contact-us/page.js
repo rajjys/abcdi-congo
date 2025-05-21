@@ -44,7 +44,7 @@ const ContactUs = () => {
             height={400}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/75 via-black/50 to-transparent"></div>
           <div className="absolute bottom-8 left-8 text-white font-bold">
           <p className="ml-4 sm:ml-8 md:ml-12 text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'Eagle Horizon' }}>
             Nous Contacter

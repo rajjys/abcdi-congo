@@ -83,7 +83,7 @@ export default async function Home() {
         <div className="sm:px-4 md:px-24 md:py-2 pt-1 bg-gray-200 dark:bg-gray-800 ">
             <NewsletterSection />
         </div>
-        <div className="py-4 sm:py-6 md:py-8"></div>
+        <div className="pb-1"></div>
     </div>
   );
 }
