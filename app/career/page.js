@@ -68,7 +68,7 @@ const CareerPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-black/75 via-black/50 to-transparent"></div>
           <div className="absolute bottom-8 left-8 text-white font-bold">
-          <p className="ml-4 sm:ml-8 md:ml-12 text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'Eagle Horizon' }}>Rejoindre Notre Equipe</p>
+          <p className="ml-4 sm:ml-8 md:ml-12 text-3xl sm:text-4xl md:text-6xl" style={{ fontFamily: 'Eagle Horizon' }}>Nous Rejoindre</p>
           </div>
         </div>
       </section>
@@ -76,7 +76,7 @@ const CareerPage = () => {
       {/* Volunteering Opportunities Section */}
       <section className="container mx-auto px-4 sm:px-8 lg:px-16 mb-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-green-700 mb-8 text-center">
-          Opportunités de Volontariat
+          Opportunités de Benevolat
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {volunteeringOpportunities.map((volunteer) => (

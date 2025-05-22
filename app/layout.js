@@ -17,11 +17,6 @@ const poppins = Poppins({
   weight: ['400', '700'], // Specify font weights (e.g., 400 for normal, 700 for bold)
   variable: '--font-poppins', // Define a CSS variable for the font
 });
-export const metadata = {
-  title: "ABCDI - ONGD",
-  description: "Construisons Ensemble",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

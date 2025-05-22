@@ -6,6 +6,7 @@ import PartnersCarousel from "./components/PartnersCarousel";
 import NewsletterSection from "./components/NewsLetterSection";
 import DonateButton from "./components/ui/DonateButton";
 import { fetchProjectItems } from "./services/graphcms";
+import { SchemaMarkup } from "./components/seo/SchemaMarkup";
 
 
 export default async function Home() {
@@ -21,6 +22,7 @@ export default async function Home() {
 
   return (
     <div>
+      <SchemaMarkup schema={localBusinessSchema} />{/* For SEO purposes */}
       <MainCarousel />
       <div className="py-4 sm:py-6 md:py-8"></div>
       <div className="flex flex-col sm:flex-row justify-center items-stretch lg:px-24 bg-white/50 dark:bg-gray-900/50">
@@ -87,3 +89,57 @@ export default async function Home() {
     </div>
   );
 }
+
+export async function generateMetadata({ params }) {
+  const title = "Actions Humanitaires | Construisons Ensemble | ABCDI";
+  const description = "ABCDI - Promotion de la securite Alimentaire par l'agriculture, la sante, le Developpement Communautaire et l'Accompagnement social";
+  const url = "https://abcdi.org/";
+  const siteName = "ABCDI";
+  const card = "summary_large_image";
+  const logo = "https://abcdi.org/logo_abcdi.png";
+  const icon = "https://abcdi.org/logo_abcdi_flamme.svg";
+  return {
+            title,
+            description,
+            alternates: {
+              canonical: url
+            },
+            openGraph: {
+              title,
+              description,
+              url,
+              siteName,
+              images: [{ url: logo }]
+            },
+            // Twitter Card Metadata
+            twitter: {
+              card,
+              title,
+              description,
+              images: [{ url: logo }]
+            },
+            icons: {
+              icon: [{ url: icon }],
+            },
+          };
+}
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "Humanitarian",
+    "name": "ABCDI",
+    "logo": "/logo_abcdi.png",
+    "image": ["https://abcdi.org/logo_abcdi_flamme.svg", "https://abcdi.org/stock/reunion.jpg", "https://abcdi.org/stock/potatoes1.jpg"],
+    "telephone": "+243 990 332 378",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av Maendeleo, Q.Mugunga",
+      "addressLocality": "Goma",
+      "addressRegion": "Nord-Kivu",
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -1.6167404,
+      "longitude": 29.1535604,
+    },
+  };

@@ -3,10 +3,10 @@
 import Image from 'next/image'
 import React from 'react'
 import ImpactMetrics from '../components/ImpactMetrics'
-import projects from '../dummyFiles/projects.json' ///to be replaced with API call
 import ProjectWidget from '../components/ProjectWidget'
 import NewsletterSection from '../components/NewsLetterSection'
 import { fetchProjectItems } from '../services/graphcms'
+import { SchemaMarkup } from '../components/seo/SchemaMarkup'
 export const dynamic = 'force-dynamic'; // Force dynamic rendering
 
 
@@ -14,6 +14,7 @@ const Projects = async () => {
   const projectItems = await fetchProjectItems();
   return (
     <div className="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+      <SchemaMarkup schema={gallerySchema} />
           {/* Hero Section */}
           <section className="relative mb-16">
             <div className="relative flex justify-center h-[50vh] sm:h-[80vh] md:h-[100vh] mb-8">
@@ -60,3 +61,65 @@ const Projects = async () => {
 }
 
 export default Projects
+
+export async function generateMetadata({ params }) {
+  const title = "Découvrez nos projets en cours et nos initiatives | ABCDI";
+  const description = "ABCDI - Oeuvre dans la Promotion de la Securite Alimentaire par l'agriculture, la sante, le Developpement Communautaire et l'Accompagnement Social";
+  const url = "https://abcdi.org/projects";
+  const siteName = "ABCDI";
+  const card = "summary_large_image";
+  const previewImage = "https://abcdi.org/stock/potatoes1.jpg"
+  const logo = "https://abcdi.org/logo_abcdi.png";
+  const icon = "https://abcdi.org/logo_abcdi_flamme.svg";
+  return {
+            title,
+            description,
+            alternates: {
+              canonical: url
+            },
+            openGraph: {
+              title,
+              description,
+              url,
+              siteName,
+              images: [{ url: previewImage }]
+            },
+            // Twitter Card Metadata
+            twitter: {
+              card,
+              title,
+              description,
+              images: [{ url: previewImage }]
+            },
+            icons: {
+              icon: [{ url: icon }],
+            },
+          }
+        }
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Nos Projets",
+    "description": "Notre Participation dans notre societe",
+    "image": [
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://abcdi.org/stock/champs.jpg",
+        "name": "Projet Maman Autonome",
+        "description": "Vise a Autonomiser les femmes entreprenantes a travers la formation et le soutien financier",
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://abcdi.org/stock/potatoes1.jpg",
+        "name": "Initiative agricole chakula",
+        "description": "Vise a Augmenter la production Alimentaire locale des communautes locales",
+      },
+      {
+        "@type": "ImageObject",
+        "contentUrl": "https://abcdi.org/stock/kids-health.jpg",
+        "name": "Sante Communautaire des Enfants",
+        "description": "Favorise l'acces aux soins pour les enfants defavorises",
+      },
+      // Add more images
+    ],
+  };

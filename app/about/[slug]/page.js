@@ -55,3 +55,25 @@ const NewsPage = async ({ params }) => {
 };
 
 export default NewsPage;
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params; // Extract the slug from the URL
+  // Fetch the team member data based on the slug
+  const teamMember = await fetchTeamMember(slug);
+  const title = teamMember.name + " | " + teamMember.role;
+  const url = "https://abcdi.org/about/" + slug;
+  const description = "ABCDI - Promotion de la securite Alimentaire par l'agriculture, la sante, le Developpement Communautaire et l'Accompagnement social"
+  return {
+    title ,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [teamMember.profile.url],
+    },
+  };
+}

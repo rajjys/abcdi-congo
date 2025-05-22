@@ -87,3 +87,22 @@ const AboutPage = async() => {
 };
 
 export default AboutPage;
+
+export async function generateMetadata({ params }) {
+  const title = "A Propos de Nous | ABCDI";
+  const description = "ABCDI - Promotion de la securite Alimentaire par l'agriculture, la sante, le Developpement Communautaire et l'Accompagnement social";
+  const url = "https://abcdi.org/about/"
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [`/stock/woman-farmer.webp`],
+    },
+  };
+}
