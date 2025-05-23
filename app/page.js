@@ -97,7 +97,6 @@ export async function generateMetadata({ params }) {
   const siteName = "ABCDI";
   const card = "summary_large_image";
   const logo = "https://abcdi.org/logo_abcdi.png";
-  const icon = "https://abcdi.org/logo_abcdi_flamme.svg";
   return {
             title,
             description,
@@ -117,9 +116,6 @@ export async function generateMetadata({ params }) {
               title,
               description,
               images: [{ url: logo }]
-            },
-            icons: {
-              icon: [{ url: icon }],
             },
           };
 }

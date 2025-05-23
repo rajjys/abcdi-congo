@@ -97,8 +97,5 @@ export async function generateMetadata({ params }) {
               description,
               images: [{ url: previewImage }]
             },
-            icons: {
-              icon: [{ url: icon }],
-            },
           };
 }

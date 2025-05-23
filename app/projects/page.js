@@ -70,7 +70,6 @@ export async function generateMetadata({ params }) {
   const card = "summary_large_image";
   const previewImage = "https://abcdi.org/stock/potatoes1.jpg"
   const logo = "https://abcdi.org/logo_abcdi.png";
-  const icon = "https://abcdi.org/logo_abcdi_flamme.svg";
   return {
             title,
             description,
@@ -90,9 +89,6 @@ export async function generateMetadata({ params }) {
               title,
               description,
               images: [{ url: previewImage }]
-            },
-            icons: {
-              icon: [{ url: icon }],
             },
           }
         }

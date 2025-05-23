@@ -26,6 +26,7 @@ export const fetchNewsItem = async (slug) => {
 // This function fetches all projects from the GraphQL API
 // It uses the GraphQL query defined in GET_PROJECTS
 export const fetchProjectItems = async () => {
+  
   const {projectItems} = await graphcms.request(GET_PROJECTS);
   return projectItems; // Return the projects
 }
