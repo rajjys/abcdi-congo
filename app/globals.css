@@ -37,7 +37,7 @@ body {
 }
 
 /* Apply opacity to sibling elements when one is hovered */
-.group:hover > *:not(:hover) {
+.nav-group:hover > *:not(:hover) {
   @media (min-width: 1000px) {
     opacity: 0.3;
   }

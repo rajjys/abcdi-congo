@@ -28,7 +28,7 @@ const PartnersCarousel = () => {
   }, []);
 
   return (
-    <div className="py-12 bg-gray-50 dark:bg-gray-900">
+    <div className="py-12 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-md">
       <div className="max-w-6xl mx-auto text-center px-4">
         <div className="relative flex items-center justify-center">
           {/* Prev Button */}

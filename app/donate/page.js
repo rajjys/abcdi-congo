@@ -209,7 +209,7 @@ const Donate = () => {
               <div className="grid grid-cols-2 gap-4 mt-4">
                 <div>
                   <label htmlFor="expiryDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                    Date d'Expiration
+                    Date d&apos;Expiration
                   </label>
                   <input
                     type="text"

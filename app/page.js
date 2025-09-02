@@ -8,6 +8,7 @@ import NewsletterSection from "./components/NewsLetterSection";
 import Link from "next/link";
 import { fetchProjectItems } from "./services/graphcms";
 import ProjectCard from "./components/ProjectCard";
+import ImpactMetrics from "./components/ImpactMetrics";
 
 export default async function LandingPage() {
   // Fetch data from the GraphQL API 
@@ -61,9 +62,9 @@ export default async function LandingPage() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 px-6 bg-gray-50 dark:bg-gray-900">
+      <section className="pt-16 pb-8 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-green-900 dark:text-green-300 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-green-900 dark:text-green-300 mb-4">
             Nos Projets
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mb-10 text-sm md:text-base max-w-3xl mx-auto">
@@ -80,17 +81,23 @@ export default async function LandingPage() {
               Aucun projet disponible pour le moment.
             </p>
           )}
-
+        </div>
+        <div className="w-fit mx-auto mt-6">
           <Link
             href="/projects"
-            className="mt-10 inline-flex items-center gap-2 px-6 py-3 border border-green-700 text-green-700 rounded-lg hover:bg-green-700 hover:text-white transition-colors dark:border-green-400 dark:text-green-400 dark:hover:bg-green-400 dark:hover:text-gray-900 font-medium"
+            className="text-xs sm:text-sm md:text-base py-4 px-6 sm:px-8 md:px-10 font-bold text-green-700 dark:text-green-300 
+              hover:text-green-600 dark:hover:text-green-100 bg-gray-100 dark:bg-gray-900/80 hover:bg-green-50 hover:dark:bg-green-900/50 
+              rounded-md shadow-md transition duration-300 flex items-center gap-2"
           >
-            Explorer tous nos projets
+            <span>Explorer tous nos projets</span>
             <ArrowRight size={18} />
           </Link>
         </div>
       </section>
-
+      {/*Impact section*/}
+      <section className="bg-gray-200 dark:bg-gray-800 sm:px-4 md:px-12 lg:px-24 py-8">
+        <ImpactMetrics />
+      </section>
       {/* Partners Carousel */}
       <section className="py-16 px-6 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">

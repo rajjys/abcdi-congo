@@ -148,7 +148,7 @@ const Header = () => {
             ref={mobileMenuRef} 
             className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 transition-all 
               duration-300 ease-in-out ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-            <ul className="flex flex-col font-medium p-4 lg:p-0 rounded-lg lg:rounded-full lg:space-x-2 xl:space-x-4 rtl:space-x-reverse lg:flex-row group">
+            <ul className="flex flex-col font-medium p-4 lg:p-0 rounded-lg lg:rounded-full lg:space-x-2 xl:space-x-4 rtl:space-x-reverse lg:flex-row nav-group">
               <NavItem href="/about" label="A Propos" className="lg:rounded-l-full" onClick={handleNavLinkClick} />
               <NavItem href="/projects" label="Projets" onClick={handleNavLinkClick} />
               <NavItem href="/news" label="Actualites" onClick={handleNavLinkClick}/>

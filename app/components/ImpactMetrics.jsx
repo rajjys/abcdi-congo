@@ -26,7 +26,7 @@ const ImpactMetrics = () => {
   }, []);
 
   return (
-    <div className="py-16 bg-gray-50 dark:bg-gray-800">
+    <div className="py-16 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-green-800 dark:text-green-300 mb-6">
         Notre Impact
       </h2>
