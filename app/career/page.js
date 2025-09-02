@@ -99,7 +99,7 @@ const CareerPage = () => {
       {/* Job Openings Section */}
       <section className="container mx-auto px-4 sm:px-8 lg:px-16 pb-16">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-green-700 mb-8 text-center">
-          Offres d'Emploi
+          Offres d&apos;Emploi
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {jobOpenings.map((job) => (

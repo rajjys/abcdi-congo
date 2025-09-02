@@ -74,11 +74,11 @@ const Header = () => {
               className="w-8 h-8 md:w-10 md:h-10"
             />
             <span className="self-center text-sm md:text-xl font-semibold whitespace-nowrap">
-              <span className='text-blue-500 pr-1 md:pr-2'>A</span>
-              <span className='text-green-600 pr-1 md:pr-2'>B</span>
-              <span className='text-red-700 pr-1 md:pr-2'>C</span>
-              <span className='text-yellow-500 pr-1 md:pr-2'>D</span>
-              <span className='text-blue-500'>I</span>
+              {['text-blue-500', 'text-green-600', 'text-red-700', 'text-yellow-500', 'text-blue-500'].map((color, i) => (
+                <span key={i} className={`${color} ${i < 4 ? 'pr-1 md:pr-2' : ''}`}>
+                  {'ABCDI'[i]}
+                </span>
+              ))}
             </span>
           </Link>
   
@@ -152,7 +152,6 @@ const Header = () => {
               <NavItem href="/about" label="A Propos" className="lg:rounded-l-full" onClick={handleNavLinkClick} />
               <NavItem href="/projects" label="Projets" onClick={handleNavLinkClick} />
               <NavItem href="/news" label="Actualites" onClick={handleNavLinkClick}/>
-              <NavItem href="/career" label="Carierre" onClick={handleNavLinkClick}/>
               <NavItem href="/contact-us" label="Contacts" onClick={handleNavLinkClick}/>
               
               {/* Donate Button */}
